@@ -1,40 +1,110 @@
-<?php class Coor
+<?php
+class Product // створюємо клас Продукт
 {
-    private $name;
-    function Getname()
+    public $name; //назва
+    public $storage_period; //термін зберігання продукту
+    public $amount; // кількість
+
+    // додатковий конструктор для ініціалізації
+    public function __construct($name, $storage_period, $amount)
     {
-
-        echo $this->name;
-
+        $this->name = $name;
+        $this->storage_period = $storage_period;
+        $this->amount = $amount;
     }
 
-    function Setname($text)
+    // метод для виводу інформації про продукт
+    public function show()
     {
-
-        $this->name = $text;
-
+        echo "Назва: " . $this->name . "<br>";
+        echo "Термін зберігання: " . $this->storage_period . " днів<br>";
+        echo "Кількість: " . $this->amount . "<br>";
+        echo "<hr>";
     }
 
+    // метод для перевірки чи продукт знаходиться в наявності
+    public function search($name)
+    {
+        if ($this->name == $name) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // метод для зміни кількості продукту
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+    }
+
+    // метод для зміни терміну зберігання
+    public function setStoragePeriod($storage_period)
+    {
+        $this->storage_period = $storage_period;
+    }
+
+    // метод для зміни назви продукту
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    // метод для знаходження терміну зберігання продукту
+    public function getStoragePeriod()
+    {
+        return $this->storage_period;
+    }
+
+    // метод для знаходження назви продукту
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    // метод для знаходження кількості продукту
+    public function getAmount()
+    {
+        return $this->amount;
+    }
 }
 
-$works = array();//creating a new array
+// Створення 3 об'єктів
+$product1 = new Product("Шоколад", 30, 5);
+$product1->show();
 
-$works[0] = new Coor();//writing a “Coor” object in array
+$product2 = new Product("Батон", 20, 20);
+$product2->show();
 
-$works[0]->Getname() = " Nick ";//set a name
+$product3 = new Product("Чай", 90, 40);
+$product3->show();
 
-$works[1] = new Coor();
+// Масив з 5 продуктів
+$products = array();
+$products[] = new Product("Молоко", 30, 5);
+$products[] = new Product("Хліб", 10, 40);
+$products[] = new Product("Помідор", 10, 100);
+$products[] = new Product("Огурець", 10, 100);
+$products[] = new Product("Печево", 90, 40);
 
-$works[1]->Getname() = " Nick 1";
-
-$works[2] = new Coor();
-
-$works[2]->Getname() = " Nick 2";
-
-for ($i = 0; $i < 3; $i++) {
-    echo $works[$i]->Getname();
+// Виведення інформації про всі продукти
+foreach ($products as $product) {
+    $product->show();
 }
 
-//circle with printing names of objects in array
+// Пошук продукту по назві
+$search_product = "Хліб";
+$found = false;
 
+foreach ($products as $product) {
+    if ($product->search($search_product)) {
+        echo "Продукт " . $search_product . " є в наявності.<br>";
+        $found = true;
+        break;
+    }
+}
+
+if (!$found) {
+    echo "Продукт " . $search_product . " немає в наявності.<br>";
+}
 ?>
