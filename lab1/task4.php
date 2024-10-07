@@ -12,15 +12,12 @@
         echo "<p>Name: " . $this->text . "<br>"; // printing name  
     }
 
+    function __destruct()
+    {
+        print "Destroying " . $this->text . "<br>";
+    }
 }
 
 $object = new Coor("Nick"); //creating “Coor” object
 $object->Getname(); //function call
-
-unset($object); // removing the object
-if (isset($object)) {
-    echo "The object still exists!";
-} else {
-    echo "The object has been destroyed!";
-}
 ?>
