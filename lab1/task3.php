@@ -14,13 +14,6 @@ class Product // створюємо клас Продукт
         $this->amount = $amount;
     }
 
-    // додатковий конструктор для ініціалізації
-    public function __construct2($weight)
-    {
-        $this->weight = $weight;
-    }
-
-
     // метод для виводу інформації про продукт
     public function show()
     {
