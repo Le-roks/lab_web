@@ -28,10 +28,10 @@
 }
 
 // Тестуємо патерн Singleton
-$obj1 = someClass::getInstance();  // Перший екземпляр
+$obj = someClass::getInstance();  // Перший екземпляр
 $obj2 = someClass::getInstance();  // Другий екземпляр (отриманий через Singleton)
 
-if ($obj1 === $obj2) {
+if ($obj === $obj2) {
     echo "Один і той же об'єкт!";
 } else {
     echo "Різні об'єкти!";
