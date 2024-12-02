@@ -4,7 +4,6 @@ class Product // створюємо клас Продукт
     public $name; //назва
     public $storage_period; //термін зберігання продукту
     public $amount; // кількість
-    private $weight = 0; // вага
 
     public function __construct($name = "Name", $storage_period = 0, $amount = 0)
     {
