@@ -1,0 +1,134 @@
+/* Загальні стилі */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #faf3e0;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  color: #7b2e2f;
+  font-size: 2rem;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+/* Пошукова форма */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  width: 50%;
+  max-width: 400px;
+  border: 1px solid #7b2e2f;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff8f0;
+  color: #7b2e2f;
+  transition: all 0.3s;
+}
+
+form input[type="text"]:focus {
+  border-color: #d8a031;
+  outline: none;
+  background-color: #ffe6cc;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #7b2e2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+form button:hover {
+  background-color: #d8a031;
+  transform: scale(1.05);
+}
+
+/* Таблиця */
+table {
+  width: 90%;
+  margin: 0 auto 20px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+  background-color: #7b2e2f;
+  color: white;
+  text-align: left;
+}
+
+table thead th {
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+table tbody tr:hover {
+  background-color: #fdf0e6;
+}
+
+table td {
+  padding: 12px;
+  font-size: 0.9rem;
+  vertical-align: middle;
+  color: #333;
+}
+
+table td img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Підвал */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #7b2e2f;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+
+  form input[type="text"] {
+    width: 70%;
+  }
+
+  table td {
+    font-size: 0.8rem;
+  }
+
+  table thead th {
+    font-size: 0.8rem;
+  }
+}
